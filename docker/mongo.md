@@ -11,9 +11,6 @@ mkdir -p /home/ubuntu/data
 docker run -d -p 27017:27017 -v ~/data:/data/db mongo
 ```
 
-
-## Connect to MongoDB from `another Docker container`
-
 ```
 # Install the MongoDB client
 sudo apt-get install mongodb-clients
