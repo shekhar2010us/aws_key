@@ -68,3 +68,22 @@ ls `docker volume inspect -f {{.Mountpoint}} myvolume`
 ```
 
 
+## Share volume across containers
+--volumes-from can be used to share a volume from one container to another, and not from the host.
+
+<p>Let's create a container with few volumes attached</p>
+```
+docker volume create --name backup
+docker volume create --name logs
+docker run -it --name master -v backup:/backup -v logs:/logs ubuntu bash
+create sample files in backup & logs folders in container
+You can stop the container, but do not remove it
+```
+
+<p>Let's create a container with volumes attached referenced from the container</p>
+
+```
+# Create another container using master volumes
+docker run -it --name slave1 --volumes-from master ubuntu bash
+check the 2 folders ; exit
+```
