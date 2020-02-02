@@ -72,6 +72,7 @@ ls `docker volume inspect -f {{.Mountpoint}} myvolume`
 --volumes-from can be used to share a volume from one container to another, and not from the host.
 
 <p>Let's create a container with few volumes attached</p>
+
 ```
 docker volume create --name backup
 docker volume create --name logs
