@@ -91,8 +91,8 @@ docker container logs <container id>
 
 1. Once Jenkins has complete it's internal setup with the one-time password, it will start the SetupWizard.
 2. Click "Install Recommended Plugins" to allow the recommended plugins to be installed (including the pipeline plugin that we'll be using later). Remember that all this "action" is happening within the container.
-3. Create your first admin user... use admin as the username and DockerStudentPW0 as the password. You can use any email address. Click "Save and Finish".
-4. Once the Jenkins dashboard appears, click the “create new jobs” link.
+3. Create your first admin user... use any userid and password. Click "Save and Finish".
+4. Once the Jenkins dashboard appears, click the "create new jobs" link.
 5. Enter the item name (e.g. “docker-test”), select “Freestyle project” and click OK.
 6. On the configuration page in the *Build* section, click “Add build step” then “Execute shell”.
 7. In the command box enter:
@@ -101,6 +101,7 @@ sudo docker run hello-world
 ```
 8. Click “Save”.
 9. Click “Build Now” in the left-side nav.
+10. Check output in ```Console Output```
 
 With luck, you have triggered a successful docker hello world. On your host
 docker VM, run
