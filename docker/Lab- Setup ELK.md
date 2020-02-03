@@ -36,27 +36,14 @@ user: elastic
 password: changeme
 ```
 
-You can now query Elasticsearch using:
+**You can query Elasticsearch in browser:**
 
-```
-curl http://localhost:9200/_security/_authenticate
-{
-  "name" : "VO32TCU",
-  "cluster_name" : "docker-cluster",
-  "cluster_uuid" : "pFgIXMErShCm1R1cd3JgTg",
-  "version" : {
-    "number" : "6.1.0",
-    "build_hash" : "c0c1ba0",
-    "build_date" : "2017-12-12T12:32:54.550Z",
-    "build_snapshot" : false,
-    "lucene_version" : "7.1.0",
-    "minimum_wire_compatibility_version" : "5.6.0",
-    "minimum_index_compatibility_version" : "5.0.0"
-  },
-  "tagline" : "You Know, for Search"
-}
-```
+`http://<public_ip>:9200`
+`http://<public_ip>:9200/_security/_authenticate`
+`http://<public_ip>:9200/_cat/indices`
 
-And finally, access Kibana by entering: http://localhost:5601 in your browser.
+**You can check Kibana in browser:**
+
+`http://<public_ip>:5601`
 
 
