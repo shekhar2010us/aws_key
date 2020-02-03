@@ -103,7 +103,7 @@ The content addressable storage model used by Docker images means that any chang
 
 In this step you learned how to pull images by digest and list image digests using the `docker images` command. For more information about the `docker pull` command, see the [documentation](https://docs.docker.com/engine/reference/commandline/pull/).
 
-# <a name="trust"></a>Step 3: Docker Content Trust
+# Step 3: Docker Content Trust
 
 It's not easy to find the digest of a particular image tag. This is because it is computed from the hash of the image contents and stored in the image manifest. The image manifest is then stored in the Registry. This is why we needed a `docker pull` by tag to find digests previously. It would also be desirable to have additional security guarantees such as image freshness.
 
@@ -129,19 +129,16 @@ In this step you will enable Docker Content Trust, sign images as you push them,
    $ docker rmi -f alpine:latest
    $ docker pull alpine:latest
 
-   Pull (1 of 1): alpine:latest@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
-sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d: Pulling from library/alpine
-c9b1b535fdd9: Pull complete 
-Digest: sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
-Status: Downloaded newer image for alpine@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
-Tagging alpine@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d as alpine:latest
-docker.io/library/alpine:latest
+		   Pull (1 of 1): alpine:latest@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
+		sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d: Pulling from library/alpine
+		c9b1b535fdd9: Pull complete 
+		Digest: sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c...
    ```
 
    Look closely at the output of the `docker pull` command and take particular notice of the name translation - how the command is translated to the digest as shown below:
 
    ```
-   Pull (1 of 1): alpine:latest@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
+		   Pull (1 of 1): alpine:latest@sha256:ab00606a42621fb68f2ed6ad3c88be54397f981a7b70a79db3d1172b11c4367d
    ```
 
 3.  Pull and unsigned image.
