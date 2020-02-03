@@ -16,8 +16,9 @@ For this tutorial, I am using a ```https://github.com/deviantony/docker-elk``` -
 
 
 ```
+cd ~
 git clone https://github.com/deviantony/docker-elk.git
-cd /docker-elk
+cd docker-elk
 docker-compose up -d
 ```
 
