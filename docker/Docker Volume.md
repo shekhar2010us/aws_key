@@ -22,7 +22,7 @@ You can mount volumes from host to containers using absolute path as shown below
 ```
 # In the host machine
 mkdir -p /foo/bar
-touch foo/bar/file.1
+touch /foo/bar/file.1
 docker run -it -v /foo/bar:/data --name vol1 ubuntu:latest
 
 # The above command takes you to the container
