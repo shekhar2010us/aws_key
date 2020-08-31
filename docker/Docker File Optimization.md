@@ -33,6 +33,7 @@ Build the image using above Dockerfile
 
 ```
 docker build -t unoptimized-image:0.1 .
+docker history <image_id or image_name>
 ```
 
 The above image when built creates **12 layers**
